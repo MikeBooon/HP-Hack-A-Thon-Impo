@@ -7,6 +7,8 @@
 <main class="m-10">
 	<h1 class="text-xl font-bold">Impositions</h1>
 
+	<a class="btn btn-accent" href="/create">Create Imposition</a>
+
 	{#if selectedImposition}
 		<code class="whitespace-pre">
 			{JSON.stringify(
