@@ -11,8 +11,6 @@ export const load = async () => {
 
 export const actions = {
 	default: async ({ request }) => {
-		console.log('request', request);
-
 		const form = await request.formData();
 
 		const data = form.get('data');
@@ -21,10 +19,8 @@ export const actions = {
 			throw new Error('No data provided');
 		}
 
-		console.log('data', data);
-
 		const parsedData = JSON.parse(data.toString()) as Imposition;
 
-		console.log(parsedData);
+		await services.impositionService.updateImposition(parsedData._id, parsedData);
 	}
 };
